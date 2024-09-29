@@ -15,10 +15,14 @@
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
+  nixpkgs.config.allowUnfree = true;
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-    pkgs.git
+  home.packages = with pkgs; [
+    git
+    nixd
+    vscode
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -85,6 +89,23 @@
     userEmail = "marius.baer@proton.me";
     extraConfig = {
       init.defaultBranch = "main";
+    };
+  };
+
+  programs.vscode = {
+    enable = true;
+    enableUpdateCheck = false;
+    enableExtensionUpdateCheck = false;
+    extensions = (with pkgs.vscode-extensions; [
+      jnoortheen.nix-ide
+    ]);
+    userSettings = {
+      "window.zoomLevel" = 1;
+      # Disable automatic updates of extensions
+      "extensions.autoUpdate" = false;
+      # Enable language server for code completion with nixd
+      "nix.enableLanguageServer" = true;
+      "nix.serverPath" = "nixd";
     };
   };
 
