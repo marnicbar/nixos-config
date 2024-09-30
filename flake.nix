@@ -5,18 +5,23 @@
     nixpkgs.url = "nixpkgs/nixos-24.05";
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nix-matlab.url = "gitlab:doronbehar/nix-matlab";
+    nix-matlab.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {self, nixpkgs, home-manager, ...}:
+  outputs = {self, nixpkgs, home-manager, nix-matlab, ...}:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      flake-overlays = [
+        nix-matlab.overlay
+      ];
     in {
     nixosConfigurations = {
       nixylap = lib.nixosSystem {
         inherit system;
-        modules = [ ./configuration.nix ];
+        modules = [ (import ./configuration.nix flake-overlays) ];
       };
     };
     homeConfigurations = {

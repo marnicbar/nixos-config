@@ -1,6 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
+flake-overlays:
 
 { config, lib, pkgs, ... }:
 
@@ -84,6 +85,14 @@
     SUBSYSTEMS=="usb", ATTR{idVendor}=="0483", MODE="0666"    
   '';
 
+  nixpkgs.overlays = [
+    (
+      final: prev: {
+
+      }
+    )
+  ] ++ flake-overlays;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mbaer = {
     isNormalUser = true;
@@ -113,6 +122,7 @@
   environment.systemPackages = with pkgs; [
     home-manager
     libwacom
+    matlab
     gnumake
     snes9x-gtk
     magic-wormhole
