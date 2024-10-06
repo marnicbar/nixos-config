@@ -111,4 +111,9 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # OneDrive configuration
+  home.file.".config/onedrive/sync_list".text = ''
+    /Dokumente/HKA/
+  '';
 }

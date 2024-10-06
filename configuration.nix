@@ -85,6 +85,8 @@ flake-overlays:
     SUBSYSTEMS=="usb", ATTR{idVendor}=="0483", MODE="0666"    
   '';
 
+  services.onedrive.enable = true;
+
   nixpkgs.overlays = [
     (
       final: prev: {
