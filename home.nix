@@ -21,6 +21,10 @@
   # environment.
   home.packages = with pkgs; [
     git
+    hunspell
+    hunspellDicts.de_DE
+    hunspellDicts.en_US
+    libreoffice-qt
     nixd
     vscode
     # # Adds the 'hello' command to your environment. It prints a friendly
