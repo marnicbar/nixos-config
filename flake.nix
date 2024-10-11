@@ -9,7 +9,8 @@
     nix-matlab.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {self, nixpkgs, home-manager, nix-matlab, ...}:
+  # self was not used
+  outputs = {nixpkgs, home-manager, nix-matlab, ...}:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
