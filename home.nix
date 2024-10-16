@@ -1,9 +1,14 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 
 {
   imports = [
-      ./user/app/sync/syncthing.nix
-      ./user/app/sync/onedrive.nix
+    ./user/app/sync/syncthing.nix
+    ./user/app/sync/onedrive.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -52,8 +57,8 @@
   ];
 
   programs.git = {
-    enable=true;
-    userName="Marius Bär";
+    enable = true;
+    userName = "Marius Bär";
     userEmail = "marius.baer@proton.me";
     extraConfig = {
       init.defaultBranch = "main";
@@ -64,15 +69,17 @@
     enable = true;
     enableUpdateCheck = false;
     enableExtensionUpdateCheck = false;
-    extensions = (with pkgs.vscode-extensions; [
-      jnoortheen.nix-ide
-      ms-vscode-remote.remote-containers
-      myriad-dreamin.tinymist
-      # (nixpkgs-unstable.vscode-extensions.github.copilot)
-    ]) ++ (with pkgs-unstable.vscode-extensions; [
-      github.copilot
-      github.copilot-chat
-    ]);
+    extensions =
+      (with pkgs.vscode-extensions; [
+        jnoortheen.nix-ide
+        ms-vscode-remote.remote-containers
+        myriad-dreamin.tinymist
+        # (nixpkgs-unstable.vscode-extensions.github.copilot)
+      ])
+      ++ (with pkgs-unstable.vscode-extensions; [
+        github.copilot
+        github.copilot-chat
+      ]);
     userSettings = {
       "window.zoomLevel" = 1;
       # Disable automatic updates of extensions

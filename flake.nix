@@ -11,7 +11,14 @@
   };
 
   # self was not used
-  outputs = {nixpkgs, nixpkgs-unstable, home-manager, nix-matlab, ...}:
+  outputs =
+    {
+      nixpkgs,
+      nixpkgs-unstable,
+      home-manager,
+      nix-matlab,
+      ...
+    }:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -29,27 +36,26 @@
           allowUnfreePredicate = (_: true);
         };
       };
-      flake-overlays = [
-        nix-matlab.overlay
-      ];
-    in {
-    nixosConfigurations = {
-      nixylap = lib.nixosSystem {
-        inherit system;
-        modules = [ (import ./configuration.nix flake-overlays) ];
-        specialArgs = {
-          inherit pkgs-unstable;
+      flake-overlays = [ nix-matlab.overlay ];
+    in
+    {
+      nixosConfigurations = {
+        nixylap = lib.nixosSystem {
+          inherit system;
+          modules = [ (import ./configuration.nix flake-overlays) ];
+          specialArgs = {
+            inherit pkgs-unstable;
+          };
+        };
+      };
+      homeConfigurations = {
+        mbaer = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [ ./home.nix ];
+          extraSpecialArgs = {
+            inherit pkgs-unstable;
+          };
         };
       };
     };
-    homeConfigurations = {
-      mbaer = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ ./home.nix ];
-        extraSpecialArgs = {
-          inherit pkgs-unstable;
-        };
-      };
-    };
-  };
 }

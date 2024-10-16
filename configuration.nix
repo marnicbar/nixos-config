@@ -3,12 +3,13 @@ flake-overlays:
 { pkgs, pkgs-unstable, ... }:
 
 {
-  imports = [
-      ./hardware-configuration.nix
-    ];
-  
+  imports = [ ./hardware-configuration.nix ];
+
   # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -17,7 +18,7 @@ flake-overlays:
   nixpkgs.config.allowUnfree = true;
 
   networking.hostName = "nixylap"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Enable networkmanager
+  networking.networkmanager.enable = true; # Enable networkmanager
 
   # Set time zone
   time.timeZone = "Europe/Berlin";
@@ -43,18 +44,20 @@ flake-overlays:
   services.onedrive.enable = true;
 
   nixpkgs.overlays = [
-    (
-      final: prev: {
+    (final: prev: {
 
-      }
-    )
+    })
   ] ++ flake-overlays;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mbaer = {
     isNormalUser = true;
     # wheel -> Enable ‘sudo’ for the user.
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
   };
 
   # List packages installed in system profile.
@@ -82,4 +85,3 @@ flake-overlays:
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "23.11"; # Did you read the comment?
 }
-
