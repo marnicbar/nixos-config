@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   imports = [
@@ -45,6 +45,8 @@
     octaveFull
     stlink
     stm32cubemx
+    typst
+    typst-lsp
     vim
     vscode
   ];
@@ -64,6 +66,12 @@
     enableExtensionUpdateCheck = false;
     extensions = (with pkgs.vscode-extensions; [
       jnoortheen.nix-ide
+      ms-vscode-remote.remote-containers
+      myriad-dreamin.tinymist
+      # (nixpkgs-unstable.vscode-extensions.github.copilot)
+    ]) ++ (with pkgs-unstable.vscode-extensions; [
+      github.copilot
+      github.copilot-chat
     ]);
     userSettings = {
       "window.zoomLevel" = 1;
