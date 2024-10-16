@@ -101,6 +101,7 @@
           };
         };
       };
+      "tinymist.formatterMode" = "typstyle";
     };
   };
 
