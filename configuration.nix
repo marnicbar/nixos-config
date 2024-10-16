@@ -1,6 +1,6 @@
 flake-overlays:
 
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   imports = [
@@ -35,6 +35,10 @@ flake-overlays:
     variant = "neo_qwertz";
   };
 
+  virtualisation.docker = {
+    enable = true;
+  };
+
   # Enable the onedrive service
   services.onedrive.enable = true;
 
@@ -50,7 +54,7 @@ flake-overlays:
   users.users.mbaer = {
     isNormalUser = true;
     # wheel -> Enable ‘sudo’ for the user.
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
   # List packages installed in system profile.
