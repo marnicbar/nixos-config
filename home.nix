@@ -29,32 +29,34 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
-    _1password-gui
-    brave
-    cmake
-    doxygen
-    gcc-arm-embedded
-    gcc12
-    git
-    hunspell
-    hunspellDicts.de_DE
-    hunspellDicts.en_US
-    inkscape
-    libreoffice-qt
-    magic-wormhole
-    mailspring
-    mono
-    nixd
-    obsidian
-    octaveFull
-    stlink
-    stm32cubemx
-    typst
-    typst-lsp
-    vim
-    vscode
-  ];
+  home.packages =
+    (with pkgs; [
+      _1password-gui
+      brave
+      cmake
+      doxygen
+      gcc-arm-embedded
+      gcc12
+      git
+      hunspell
+      hunspellDicts.de_DE
+      hunspellDicts.en_US
+      inkscape
+      libreoffice-qt
+      magic-wormhole
+      mailspring
+      mono
+      nixd
+      nixfmt-rfc-style
+      obsidian
+      octaveFull
+      stlink
+      stm32cubemx
+      typst
+      typst-lsp
+      vim
+    ])
+    ++ (with pkgs-unstable; [ vscode ]);
 
   programs.git = {
     enable = true;
@@ -69,14 +71,15 @@
     enable = true;
     enableUpdateCheck = false;
     enableExtensionUpdateCheck = false;
+    package = pkgs-unstable.vscode;
     extensions =
       (with pkgs.vscode-extensions; [
+        # Stable extensions
+      ])
+      ++ (with pkgs-unstable.vscode-extensions; [
         jnoortheen.nix-ide
         ms-vscode-remote.remote-containers
         myriad-dreamin.tinymist
-        # (nixpkgs-unstable.vscode-extensions.github.copilot)
-      ])
-      ++ (with pkgs-unstable.vscode-extensions; [
         github.copilot
         github.copilot-chat
       ]);
@@ -87,6 +90,17 @@
       # Enable language server for code completion with nixd
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nixd";
+      "nix.formatterPath" = "nixfmt";
+      "[nix]" = {
+        "editor.defaultFormatter" = "jnoortheen.nix-ide";
+      };
+      "nix.serverSettings" = {
+        "nixd" = {
+          "formatting" = {
+            "command" = [ "nixfmt" ];
+          };
+        };
+      };
     };
   };
 
