@@ -42,6 +42,7 @@
       hunspellDicts.de_DE
       hunspellDicts.en_US
       inkscape
+      kitty
       libreoffice-qt
       magic-wormhole
       mailspring

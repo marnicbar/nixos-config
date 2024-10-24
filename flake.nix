@@ -6,13 +6,15 @@
     nixpkgs-unstable.url = "nixpkgs/nixpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.inputs.nixpkgs.follows = "nixpkgs";
     nix-matlab.url = "gitlab:doronbehar/nix-matlab";
     nix-matlab.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   # self was not used
   outputs =
-    {
+    inputs@{
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
@@ -44,6 +46,7 @@
           inherit system;
           modules = [ (import ./configuration.nix flake-overlays) ];
           specialArgs = {
+            inherit inputs;
             inherit pkgs-unstable;
           };
         };
