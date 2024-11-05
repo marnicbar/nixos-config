@@ -68,6 +68,10 @@
     };
   };
 
+  programs.nushell = {
+    enable = true;
+  };
+
   programs.vscode = {
     enable = true;
     enableUpdateCheck = false;
