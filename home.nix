@@ -33,6 +33,7 @@
     (with pkgs; [
       _1password-gui
       brave
+      cm_unicode
       cmake
       doxygen
       gcc-arm-embedded
@@ -51,6 +52,7 @@
       nixfmt-rfc-style
       obsidian
       octaveFull
+      protonmail-desktop
       stlink
       stm32cubemx
       typst
