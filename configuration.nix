@@ -51,6 +51,14 @@ flake-overlays:
     })
   ] ++ flake-overlays;
 
+  # Enable the printing service and network printer autodiscovery.
+  services.printing.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mbaer = {
     isNormalUser = true;
@@ -65,6 +73,7 @@ flake-overlays:
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
+    epson-escpr # Epson printer driver
     home-manager
     libwacom
     matlab
