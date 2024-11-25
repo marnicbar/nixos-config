@@ -53,6 +53,7 @@
       obsidian
       octaveFull
       protonmail-desktop
+      signal-desktop
       stlink
       stm32cubemx
       typst
