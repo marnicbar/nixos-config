@@ -53,6 +53,7 @@
       obsidian
       octaveFull
       protonmail-desktop
+      rnote
       signal-desktop
       stlink
       stm32cubemx
