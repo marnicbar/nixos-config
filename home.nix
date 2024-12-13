@@ -39,6 +39,7 @@
       gcc-arm-embedded
       gcc12
       git
+      gnuradio
       hunspell
       hunspellDicts.de_DE
       hunspellDicts.en_US
