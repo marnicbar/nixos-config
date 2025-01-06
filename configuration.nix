@@ -59,6 +59,20 @@ flake-overlays:
     openFirewall = true;
   };
 
+  # Allow any user read/write access to ADI PlutoSDR devices
+  services.udev.extraRules = ''
+    # DFU Device
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="0456", ATTRS{idProduct}=="b674", MODE="0666"
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="2fa2", ATTRS{idProduct}=="5a32", MODE="0666"
+    # SDR Device
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="0456", ATTRS{idProduct}=="b673", MODE="0666"
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="2fa2", ATTRS{idProduct}=="5a02", MODE="0666"
+    # tell the ModemManager (part of the NetworkManager suite) that the device is not a modem, 
+    # and don't send AT commands to it
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="0456", ATTRS{idProduct}=="b673", ENV{ID_MM_DEVICE_IGNORE}="1"
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="2fa2", ATTRS{idProduct}=="5a02", ENV{ID_MM_DEVICE_IGNORE}="1"
+  '';
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mbaer = {
     isNormalUser = true;
