@@ -9,6 +9,7 @@
   imports = [
     ./user/app/sync/syncthing.nix
     ./user/app/sync/onedrive.nix
+    ./user/wm/gnome.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
