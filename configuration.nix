@@ -89,6 +89,7 @@ flake-overlays:
   environment.systemPackages = with pkgs; [
     epson-escpr # Epson printer driver
     home-manager
+    libinput
     libwacom
     matlab
   ];
