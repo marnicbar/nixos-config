@@ -53,7 +53,7 @@
       nixd
       nixfmt-rfc-style
       obsidian
-      octaveFull
+      (octaveFull. withPackages (ps: with ps; [ signal communications ]))
       protonmail-desktop
       rnote
       signal-desktop
