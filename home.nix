@@ -37,6 +37,7 @@
       cm_unicode
       cmake
       doxygen
+      freecad-wayland
       gcc-arm-embedded
       gcc12
       git
