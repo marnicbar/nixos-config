@@ -64,7 +64,7 @@
       typst-lsp
       vim
     ])
-    ++ (with pkgs-unstable; [ vscode ]);
+    ++ (with pkgs-unstable; [ vscode musescore ]);
 
   programs.git = {
     enable = true;
