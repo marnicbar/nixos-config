@@ -36,6 +36,7 @@
       brave
       cm_unicode
       cmake
+      distrobox
       doxygen
       freecad-wayland
       gcc-arm-embedded
