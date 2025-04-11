@@ -64,6 +64,7 @@
       typst
       typst-lsp
       vim
+      zotero
     ])
     ++ (with pkgs-unstable; [ vscode musescore ]);
 
