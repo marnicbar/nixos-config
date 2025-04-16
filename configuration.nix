@@ -1,5 +1,3 @@
-flake-overlays:
-
 { pkgs, pkgs-unstable, ... }:
 
 {
@@ -45,12 +43,6 @@ flake-overlays:
   # Enable the onedrive service
   services.onedrive.enable = true;
 
-  nixpkgs.overlays = [
-    (final: prev: {
-
-    })
-  ] ++ flake-overlays;
-
   # Enable the printing service and network printer autodiscovery.
   services.printing.enable = true;
   services.avahi = {
@@ -91,7 +83,6 @@ flake-overlays:
     home-manager
     libinput
     libwacom
-    matlab
   ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,

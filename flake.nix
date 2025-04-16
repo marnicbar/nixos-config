@@ -9,8 +9,6 @@
     hyprland = {
       url = "github:hyprwm/Hyprland";
     };
-    nix-matlab.url = "gitlab:doronbehar/nix-matlab";
-    nix-matlab.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   # self was not used
@@ -19,7 +17,6 @@
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
-      nix-matlab,
       ...
     }:
     let
@@ -39,13 +36,12 @@
           allowUnfreePredicate = (_: true);
         };
       };
-      flake-overlays = [ nix-matlab.overlay ];
     in
     {
       nixosConfigurations = {
         nixylap = lib.nixosSystem {
           inherit system;
-          modules = [ (import ./configuration.nix flake-overlays) ];
+          modules = [ ./configuration.nix ];
           specialArgs = {
             inherit inputs;
             inherit pkgs-unstable;
