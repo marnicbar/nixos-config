@@ -3,6 +3,8 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+
+  # Exclude certain (otherwise preinstalled) packages
   environment.gnome.excludePackages = with pkgs; [
     epiphany    # Web Browser
     gedit       # Text Editor
