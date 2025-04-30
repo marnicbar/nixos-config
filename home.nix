@@ -55,7 +55,12 @@
       nixd
       nixfmt-rfc-style
       obsidian
-      (octaveFull. withPackages (ps: with ps; [ signal communications ]))
+      (octaveFull.withPackages (
+        ps: with ps; [
+          signal
+          communications
+        ]
+      ))
       protonmail-desktop
       rnote
       signal-desktop
@@ -66,7 +71,11 @@
       vim
       zotero
     ])
-    ++ (with pkgs-unstable; [ vscode musescore ]);
+    ++ (with pkgs-unstable; [
+      vscode
+      musescore
+      quickemu
+    ]);
 
   programs.git = {
     enable = true;
