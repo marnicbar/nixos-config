@@ -11,7 +11,9 @@
       "system/locale".region = "de_DE.UTF-8";
       "org/gnome/desktop/interface".color-scheme = "prefer-dark";
       "org/gnome/desktop/calendar".show-weekdate = true;
+      "org/gnome/desktop/interface".enable-hot-corners = false;
       "org/gnome/evince/default".continuous = true;
+      "org/gnome/mutter".edge-tiling = true;
 
       "org/gnome/shell" = {
         disable-user-extensions = false;
