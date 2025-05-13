@@ -74,6 +74,7 @@
     ++ (with pkgs-unstable; [
       vscode
       musescore
+      qucs-s
       quickemu
     ]);
 
