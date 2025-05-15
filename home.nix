@@ -41,7 +41,6 @@
       freecad-wayland
       gcc-arm-embedded
       gcc12
-      git
       gnuradio
       hunspell
       hunspellDicts.de_DE
@@ -80,10 +79,12 @@
 
   programs.git = {
     enable = true;
+    package = pkgs.gitFull;
     userName = "Marius Bär";
     userEmail = "marius.baer@proton.me";
     extraConfig = {
       init.defaultBranch = "main";
+      credential.helper = "libsecret";
     };
   };
 

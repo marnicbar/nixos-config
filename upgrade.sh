@@ -7,6 +7,9 @@
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
+# Ask for root password
+sudo -v
+
 # Update flake
 $SCRIPT_DIR/update.sh;
 
