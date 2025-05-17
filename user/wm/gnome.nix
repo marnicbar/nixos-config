@@ -11,9 +11,24 @@
       "system/locale".region = "de_DE.UTF-8";
       "org/gnome/desktop/interface".color-scheme = "prefer-dark";
       "org/gnome/desktop/calendar".show-weekdate = true;
+
+      # Power saving and screen settings
+      "org/gnome/desktop/lockdown".disable-lock-screen = false; # Enable lock screen
+      "org/gnome/desktop/session".idle-delay = 0; # Disable screen blank after
+      "org/gnome/desktop/screensaver".lock-enabled = true; # Enable lock screen when blanked (lid closed)
+      "org/gnome/desktop/screensaver".lock-delay = 0; # Disable lock delay
+      "org/gnome/settings-daemon/plugins/power".idle-dim = false; # Disable screen dimming
+      "org/gnome/settings-daemon/plugins/power".power-saver-profile-on-low-battery = false; # Disable power saver profile on low battery
+      "org/gnome/settings-daemon/plugins/power".sleep-inactive-battery-type = "suspend"; # Suspend on battery
+      "org/gnome/settings-daemon/plugins/power".sleep-inactive-battery-timeout = 900; # 15 minutes
+      "org/gnome/settings-daemon/plugins/power".sleep-inactive-ac-type = "suspend"; # Suspend on AC
+      "org/gnome/settings-daemon/plugins/power".sleep-inactive-ac-timeout = 1200; # 20 minutes
+      
+      "org/gnome/evince/default".continuous = true; # Enable continuous scrolling in PDF viewer
+
+      # Window management
       "org/gnome/desktop/interface".enable-hot-corners = false;
-      "org/gnome/evince/default".continuous = true;
-      "org/gnome/mutter".edge-tiling = true;
+      "org/gnome/mutter".edge-tiling = true; # Enable snapping of windows to screen edges
 
       "org/gnome/shell" = {
         disable-user-extensions = false;
