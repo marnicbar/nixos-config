@@ -107,6 +107,8 @@
         myriad-dreamin.tinymist
         github.copilot
         github.copilot-chat
+        streetsidesoftware.code-spell-checker
+        streetsidesoftware.code-spell-checker-german
       ]);
     userSettings = {
       "window.zoomLevel" = 1;
