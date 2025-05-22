@@ -11,7 +11,6 @@
     # };
   };
 
-  # self was not used
   outputs =
     inputs@{
       nixpkgs,
@@ -22,13 +21,6 @@
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
-          allowUnfreePredicate = (_: true);
-        };
-      };
       pkgs-unstable = import nixpkgs-unstable {
         inherit system;
         config = {
@@ -36,25 +28,26 @@
           allowUnfreePredicate = (_: true);
         };
       };
+      specialArgs = {
+        inherit inputs;
+        inherit pkgs-unstable;
+      };
+      sharedModules = [
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useUserPackages = true;
+            extraSpecialArgs = specialArgs;
+          };
+        }
+      ];
     in
     {
       nixosConfigurations = {
         nixylap = lib.nixosSystem {
           inherit system;
-          modules = [ ./configuration.nix ];
-          specialArgs = {
-            inherit inputs;
-            inherit pkgs-unstable;
-          };
-        };
-      };
-      homeConfigurations = {
-        mbaer = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [ ./home.nix ];
-          extraSpecialArgs = {
-            inherit pkgs-unstable;
-          };
+          modules = sharedModules ++ [ ./hosts/nixylap.nix ];
+          inherit specialArgs;
         };
       };
     };

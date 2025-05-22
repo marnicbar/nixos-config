@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
     ./system/wm/gnome.nix
   ];
 
@@ -18,7 +17,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  networking.hostName = "nixylap"; # Define your hostname.
   networking.networkmanager.enable = true; # Enable networkmanager
 
   # Set time zone
@@ -62,24 +60,9 @@
     SUBSYSTEM=="usb", ATTRS{idVendor}=="2fa2", ATTRS{idProduct}=="5a02", ENV{ID_MM_DEVICE_IGNORE}="1"
   '';
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.mbaer = {
-    isNormalUser = true;
-    shell = pkgs.nushell;
-    # wheel -> Enable ‘sudo’ for the user.
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "docker"
-    ];
-  };
-
-  # List packages installed in system profile.
+  # System packages on every host
   environment.systemPackages = with pkgs; [
-    epson-escpr # Epson printer driver
     home-manager
-    libinput
-    libwacom
   ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,
