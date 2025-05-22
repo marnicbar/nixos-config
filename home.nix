@@ -67,7 +67,6 @@
       stlink
       stm32cubemx
       typst
-      typst-lsp
       vim
       zotero
     ])
@@ -95,41 +94,45 @@
 
   programs.vscode = {
     enable = true;
-    enableUpdateCheck = false;
-    enableExtensionUpdateCheck = false;
     package = pkgs-unstable.vscode;
-    extensions =
-      (with pkgs.vscode-extensions; [
-        # Stable extensions
-      ])
-      ++ (with pkgs-unstable.vscode-extensions; [
-        jnoortheen.nix-ide
-        ms-vscode-remote.remote-containers
-        myriad-dreamin.tinymist
-        github.copilot
-        github.copilot-chat
-        streetsidesoftware.code-spell-checker
-        streetsidesoftware.code-spell-checker-german
-      ]);
-    userSettings = {
-      "window.zoomLevel" = 1;
-      # Disable automatic updates of extensions
-      "extensions.autoUpdate" = false;
-      # Enable language server for code completion with nixd
-      "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "nixd";
-      "nix.formatterPath" = "nixfmt";
-      "[nix]" = {
-        "editor.defaultFormatter" = "jnoortheen.nix-ide";
-      };
-      "nix.serverSettings" = {
-        "nixd" = {
-          "formatting" = {
-            "command" = [ "nixfmt" ];
+    profiles = {
+      default = {
+        enableUpdateCheck = false;
+        enableExtensionUpdateCheck = false;
+        extensions =
+          (with pkgs.vscode-extensions; [
+            # Stable extensions
+          ])
+          ++ (with pkgs-unstable.vscode-extensions; [
+            jnoortheen.nix-ide
+            ms-vscode-remote.remote-containers
+            myriad-dreamin.tinymist
+            github.copilot
+            github.copilot-chat
+            streetsidesoftware.code-spell-checker
+            streetsidesoftware.code-spell-checker-german
+          ]);
+        userSettings = {
+          "window.zoomLevel" = 1;
+          # Disable automatic updates of extensions
+          "extensions.autoUpdate" = false;
+          # Enable language server for code completion with nixd
+          "nix.enableLanguageServer" = true;
+          "nix.serverPath" = "nixd";
+          "nix.formatterPath" = "nixfmt";
+          "[nix]" = {
+            "editor.defaultFormatter" = "jnoortheen.nix-ide";
           };
+          "nix.serverSettings" = {
+            "nixd" = {
+              "formatting" = {
+                "command" = [ "nixfmt" ];
+              };
+            };
+          };
+          "tinymist.formatterMode" = "typstyle";
         };
       };
-      "tinymist.formatterMode" = "typstyle";
     };
   };
 
