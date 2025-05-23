@@ -49,6 +49,11 @@
           modules = sharedModules ++ [ ./hosts/nixylap.nix ];
           inherit specialArgs;
         };
+        fw1325 = lib.nixosSystem {
+          inherit system;
+          modules = sharedModules ++ [ ./hosts/fw1325.nix ];
+          inherit specialArgs;
+        };
       };
     };
 }
