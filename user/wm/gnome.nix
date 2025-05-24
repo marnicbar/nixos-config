@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   home.packages = with pkgs.gnomeExtensions; [
     # Automatically switch between power profiles based on power supply and battery status
@@ -10,6 +10,8 @@
     settings = {
       "system/locale".region = "de_DE.UTF-8";
       "org/gnome/desktop/interface".color-scheme = "prefer-dark";
+      "org/gnome/desktop/input-sources".show-all-sources = true;
+      "org/gnome/desktop/input-sources".sources = [(lib.hm.gvariant.mkTuple ["xkb" "de+neo_qwertz"]) (lib.hm.gvariant.mkTuple["xkb" "de"])];
       "org/gnome/desktop/calendar".show-weekdate = true;
 
       # Power saving and screen settings

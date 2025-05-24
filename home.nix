@@ -12,11 +12,6 @@
     ./user/wm/gnome.nix
   ];
 
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
-  home.username = "mbaer";
-  home.homeDirectory = "/home/mbaer";
-
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -68,6 +63,7 @@
       stm32cubemx
       typst
       vim
+      xkeyboard_config
       zotero
     ])
     ++ (with pkgs-unstable; [
@@ -80,8 +76,6 @@
   programs.git = {
     enable = true;
     package = pkgs.gitFull;
-    userName = "Marius Bär";
-    userEmail = "marius.baer@proton.me";
     extraConfig = {
       init.defaultBranch = "main";
       credential.helper = "libsecret";
@@ -135,7 +129,4 @@
       };
     };
   };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }
