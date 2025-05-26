@@ -40,6 +40,9 @@
       # Window management
       "org/gnome/desktop/interface".enable-hot-corners = false;
       "org/gnome/mutter".edge-tiling = true; # Enable snapping of windows to screen edges
+      "org/gnome/mutter".dynamic-workspaces = false; # Fixed number of workspaces
+      "org/gnome/desktop/wm/preferences".num-workspaces = 4;
+      "org/gnome/mutter".workspaces-only-on-primary = false; # Use workspaces on all displays
 
       "org/gnome/shell" = {
         favorite-apps = [
