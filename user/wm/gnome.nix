@@ -11,7 +11,16 @@
       "system/locale".region = "de_DE.UTF-8";
       "org/gnome/desktop/interface".color-scheme = "prefer-dark";
       "org/gnome/desktop/input-sources".show-all-sources = true;
-      "org/gnome/desktop/input-sources".sources = [(lib.hm.gvariant.mkTuple ["xkb" "de+neo_qwertz"]) (lib.hm.gvariant.mkTuple["xkb" "de"])];
+      "org/gnome/desktop/input-sources".sources = [
+        (lib.hm.gvariant.mkTuple [
+          "xkb"
+          "de+neo_qwertz"
+        ])
+        (lib.hm.gvariant.mkTuple [
+          "xkb"
+          "de"
+        ])
+      ];
       "org/gnome/desktop/calendar".show-weekdate = true;
 
       # Power saving and screen settings
@@ -25,7 +34,7 @@
       "org/gnome/settings-daemon/plugins/power".sleep-inactive-battery-timeout = 900; # 15 minutes
       "org/gnome/settings-daemon/plugins/power".sleep-inactive-ac-type = "suspend"; # Suspend on AC
       "org/gnome/settings-daemon/plugins/power".sleep-inactive-ac-timeout = 1200; # 20 minutes
-      
+
       "org/gnome/evince/default".continuous = true; # Enable continuous scrolling in PDF viewer
 
       # Window management
@@ -42,7 +51,7 @@
         enabled-extensions = [
           pkgs.gnomeExtensions.auto-power-profile.extensionUuid
         ];
-        disabled-extensions = [];
+        disabled-extensions = [ ];
       };
       "org/gnome/shell/extensions/auto-power-profile" = {
         ac = "performance";

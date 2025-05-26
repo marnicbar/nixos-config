@@ -7,7 +7,8 @@
     ../users/mbaer.nix
   ];
 
-  boot.initrd.luks.devices."luks-386a2543-da8e-4ce0-a656-91c21aecd55e".device = "/dev/disk/by-uuid/386a2543-da8e-4ce0-a656-91c21aecd55e";
+  boot.initrd.luks.devices."luks-386a2543-da8e-4ce0-a656-91c21aecd55e".device =
+    "/dev/disk/by-uuid/386a2543-da8e-4ce0-a656-91c21aecd55e";
 
   networking.hostName = "fw1325";
 

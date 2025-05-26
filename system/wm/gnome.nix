@@ -6,12 +6,12 @@
 
   # Exclude certain (otherwise preinstalled) packages
   environment.gnome.excludePackages = with pkgs; [
-    epiphany    # Web Browser
-    gedit       # Text Editor
+    epiphany # Web Browser
+    gedit # Text Editor
     simple-scan # Document Scanner
-    yelp        # Help Viewer
-    geary       # Email Client
-    seahorse    # Password Manager
+    yelp # Help Viewer
+    geary # Email Client
+    seahorse # Password Manager
     gnome-characters
     gnome-contacts
     gnome-font-viewer
