@@ -33,6 +33,11 @@
       "org/gnome/mutter".edge-tiling = true; # Enable snapping of windows to screen edges
 
       "org/gnome/shell" = {
+        favorite-apps = [
+          "org.gnome.Console.desktop"
+          "org.gnome.Nautilus.desktop"
+          "brave-browser.desktop"
+        ];
         disable-user-extensions = false;
         enabled-extensions = [
           pkgs.gnomeExtensions.auto-power-profile.extensionUuid
