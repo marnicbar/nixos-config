@@ -1,8 +1,14 @@
 { pkgs, ... }:
 {
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+  };
+
+  # Allow Electron and Chromium applications to run without Xwayland under Wayland.
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Exclude certain (otherwise preinstalled) packages
   environment.gnome.excludePackages = with pkgs; [

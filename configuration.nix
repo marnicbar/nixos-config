@@ -39,9 +39,6 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  # Enable the X11 windowing system for xwayland.
-  services.xserver.enable = true;
-
   # Configure keyboard settings
   services.xserver.xkb = {
     layout = "de";
