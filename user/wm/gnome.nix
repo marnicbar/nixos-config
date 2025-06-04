@@ -38,6 +38,7 @@
       "org/gnome/evince/default".continuous = true; # Enable continuous scrolling in PDF viewer
 
       # Window management
+      "org/gnome/mutter".attach-modal-dialogs = false; # Allow movement of modal dialogs (child windows)
       "org/gnome/desktop/interface".enable-hot-corners = false;
       "org/gnome/mutter".edge-tiling = true; # Enable snapping of windows to screen edges
       "org/gnome/mutter".dynamic-workspaces = false; # Fixed number of workspaces
