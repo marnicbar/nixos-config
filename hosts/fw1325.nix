@@ -17,6 +17,10 @@
   # Track the latest Linux kernel release for improved hardware support
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # Gaming
+  programs.steam.enable = true;
+  programs.gamemode.enable = true;
+
   # Enable fingerprint reader support
   # VERY buggy! This inserts some key, when logging in or decrypting the drive
   # This leads to a wrong passphrase and one can't log in.
