@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "nixpkgs/nixpkgs-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     # hyprland = {
@@ -15,6 +16,7 @@
     inputs@{
       nixpkgs,
       nixpkgs-unstable,
+      nixos-hardware,
       home-manager,
       ...
     }:
@@ -51,7 +53,10 @@
         };
         fw1325 = lib.nixosSystem {
           inherit system;
-          modules = sharedModules ++ [ ./hosts/fw1325.nix ];
+          modules = sharedModules ++ [
+            ./hosts/fw1325.nix
+            nixos-hardware.nixosModules.framework-amd-ai-300-series
+          ];
           inherit specialArgs;
         };
       };
