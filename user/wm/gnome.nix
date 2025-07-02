@@ -34,6 +34,7 @@
       "org/gnome/settings-daemon/plugins/power".sleep-inactive-battery-timeout = 900; # 15 minutes
       "org/gnome/settings-daemon/plugins/power".sleep-inactive-ac-type = "suspend"; # Suspend on AC
       "org/gnome/settings-daemon/plugins/power".sleep-inactive-ac-timeout = 1200; # 20 minutes
+      "org/gnome/settings-daemon/plugins/power".ambient-enabled = false; # Disable automatic screen brightness
 
       "org/gnome/evince/default".continuous = true; # Enable continuous scrolling in PDF viewer
 

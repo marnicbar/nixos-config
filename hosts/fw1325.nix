@@ -21,8 +21,6 @@
   programs.steam.enable = true;
   programs.gamemode.enable = true;
 
-  # Enable fingerprint reader support
-  # VERY buggy! This inserts some key, when logging in or decrypting the drive
-  # This leads to a wrong passphrase and one can't log in.
-  # services.fprintd.enable = true;
+  # Disable the finger print reader for now, because it does not work out of the box
+  services.fprintd.enable = false;
 }
