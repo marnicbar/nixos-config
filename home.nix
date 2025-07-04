@@ -41,6 +41,7 @@
       hunspellDicts.de_DE
       hunspellDicts.en_US
       inkscape
+      kdePackages.okular
       kitty
       libreoffice-qt
       magic-wormhole
