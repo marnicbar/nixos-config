@@ -108,7 +108,7 @@
             streetsidesoftware.code-spell-checker-german
           ]);
         userSettings = {
-          "window.zoomLevel" = 1;
+          "window.zoomLevel" = 0;
           # Disable automatic updates of extensions
           "extensions.autoUpdate" = false;
           # Enable language server for code completion with nixd
