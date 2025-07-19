@@ -9,8 +9,9 @@
 
   networking.hostName = "nixylap";
 
+  services.libinput.enable = true;
+
   environment.systemPackages = with pkgs; [
-    libinput
     libwacom
   ];
 }
