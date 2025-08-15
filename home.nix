@@ -28,6 +28,7 @@
   home.packages =
     (with pkgs; [
       _1password-gui
+      anki-bin
       brave
       cm_unicode
       cmake
@@ -47,6 +48,7 @@
       magic-wormhole
       mailspring
       mono
+      mpv # for audio playback in Anki
       nixd
       nixfmt-rfc-style
       obsidian
