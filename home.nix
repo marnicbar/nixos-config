@@ -29,7 +29,6 @@
     (with pkgs; [
       _1password-gui
       anki-bin
-      brave
       cm_unicode
       cmake
       distrobox
@@ -76,6 +75,15 @@
       qucs-s
       quickemu
     ]);
+
+  programs.chromium = {
+    enable = true;
+    package = pkgs.brave;
+    extensions = [
+      { id = "aeblfdkhhhdcdjpifhhbdiojplfjncoa"; } # 1Password
+      { id = "jdbnofccmhefkmjbkkdkfiicjkgofkdh"; } # bookmark sidebar
+    ];
+  };
 
   programs.git = {
     enable = true;
