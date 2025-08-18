@@ -14,9 +14,6 @@
 
   services.fwupd.enable = true;
 
-  # Track the latest Linux kernel release for improved hardware support
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   # Gaming
   programs.steam.enable = true;
   programs.gamemode.enable = true;
