@@ -15,9 +15,13 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Splash screen
+  boot.plymouth.enable = true;
+
   nixpkgs.config.allowUnfree = true;
 
   networking.networkmanager.enable = true; # Enable networkmanager
+  systemd.services.NetworkManager-wait-online.enable = false; # Don't wait for a network connection at boot
 
   # Set time zone
   time.timeZone = "Europe/Berlin";
