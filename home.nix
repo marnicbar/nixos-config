@@ -57,8 +57,6 @@
           communications
         ]
       ))
-      protonmail-desktop
-      protonvpn-gui
       rnote
       rustdesk-flutter # Use rustdesk-flutter over rustdesk because the latter uses unfree components and therefore won't be cached by hydra.
       signal-desktop
