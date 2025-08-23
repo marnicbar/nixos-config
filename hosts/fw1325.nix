@@ -20,10 +20,4 @@
 
   # Disable the finger print reader for now, because it does not work out of the box
   services.fprintd.enable = false;
-
-  # Set kernel parameters for AMD GPU to avoid flickering
-  # https://community.frame.work/t/screen-flickering-on-linux-kernel-6-12/62632/34
-  boot.kernelParams = pkgs.lib.mkAfter [
-    "amdgpu.dcdebugmask=0x410"
-  ];
 }
