@@ -21,6 +21,7 @@
           "de"
         ])
       ];
+      "org/gnome/desktop/input-sources".xkb-options = ["compose:ralt"]; # Right Alt (alt gr) as compose key
       "org/gnome/desktop/calendar".show-weekdate = true;
 
       # Power saving and screen settings
