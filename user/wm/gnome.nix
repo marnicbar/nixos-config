@@ -21,7 +21,7 @@
           "de"
         ])
       ];
-      "org/gnome/desktop/input-sources".xkb-options = ["compose:ralt"]; # Right Alt (alt gr) as compose key
+      "org/gnome/desktop/input-sources".xkb-options = [ "compose:ralt" ]; # Right Alt (alt gr) as compose key
       "org/gnome/desktop/calendar".show-weekdate = true;
 
       # Power saving and screen settings
@@ -46,10 +46,10 @@
       "org/gnome/mutter".dynamic-workspaces = false; # Fixed number of workspaces
       "org/gnome/desktop/wm/preferences".num-workspaces = 4;
       "org/gnome/mutter".workspaces-only-on-primary = false; # Use workspaces on all displays
-      "org/gnome/desktop/wm/keybindings".switch-to-workspace-1 = ["<Shift><Super>1"];
-      "org/gnome/desktop/wm/keybindings".switch-to-workspace-2 = ["<Shift><Super>2"];
-      "org/gnome/desktop/wm/keybindings".switch-to-workspace-3 = ["<Shift><Super>3"];
-      "org/gnome/desktop/wm/keybindings".switch-to-workspace-4 = ["<Shift><Super>4"];
+      "org/gnome/desktop/wm/keybindings".switch-to-workspace-1 = [ "<Shift><Super>1" ];
+      "org/gnome/desktop/wm/keybindings".switch-to-workspace-2 = [ "<Shift><Super>2" ];
+      "org/gnome/desktop/wm/keybindings".switch-to-workspace-3 = [ "<Shift><Super>3" ];
+      "org/gnome/desktop/wm/keybindings".switch-to-workspace-4 = [ "<Shift><Super>4" ];
 
       "org/gnome/shell" = {
         favorite-apps = [
