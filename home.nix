@@ -110,6 +110,7 @@
           ++ (with pkgs-unstable.vscode-extensions; [
             jnoortheen.nix-ide
             ms-vscode-remote.remote-containers
+            ms-vscode-remote.remote-ssh
             myriad-dreamin.tinymist
             github.copilot
             github.copilot-chat
