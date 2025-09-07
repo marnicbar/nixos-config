@@ -1,4 +1,8 @@
-{ pkgs, pkgs-unstable, ... }:
+{
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 
 {
   imports = [
@@ -96,6 +100,10 @@
     SUBSYSTEM=="usb", ATTRS{idVendor}=="0456", ATTRS{idProduct}=="b673", ENV{ID_MM_DEVICE_IGNORE}="1"
     SUBSYSTEM=="usb", ATTRS{idVendor}=="2fa2", ATTRS{idProduct}=="5a02", ENV{ID_MM_DEVICE_IGNORE}="1"
   '';
+
+  services.udev.packages = [
+    (import ./system/stm/stlink_udev_rules.nix { stdenv = pkgs.stdenv; })
+  ];
 
   # System packages on every host
   environment.systemPackages = with pkgs; [
