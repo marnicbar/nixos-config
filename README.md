@@ -14,7 +14,7 @@ or
 
 ## Remove old system generations
 
-`nix-collect-garbage --delete-older-than 30d`
+`sudo nix-collect-garbage --delete-older-than 30d`
 
 # Configuration for specific applications
 
