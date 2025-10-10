@@ -32,6 +32,7 @@
       cm_unicode
       cmake
       distrobox
+      drawio
       doxygen
       freecad-wayland
       gcc-arm-embedded
