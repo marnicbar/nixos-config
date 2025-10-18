@@ -142,6 +142,7 @@
             };
           };
           "tinymist.formatterMode" = "typstyle";
+          "cSpell.language" = "en,de-de";
         };
       };
     };
