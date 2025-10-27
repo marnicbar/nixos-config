@@ -75,6 +75,7 @@
       musescore
       qucs-s
       quickemu
+      winboat
     ]);
 
   programs.chromium = {
