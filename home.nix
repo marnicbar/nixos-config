@@ -51,6 +51,7 @@
       mpv # for audio playback in Anki
       nixd
       nixfmt-rfc-style
+      nvd
       obsidian
       (octaveFull.withPackages (
         ps: with ps; [
