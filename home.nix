@@ -46,7 +46,6 @@
       kitty
       libreoffice-qt
       magic-wormhole
-      mailspring
       mono
       mpv # for audio playback in Anki
       nixd
@@ -65,7 +64,7 @@
       signal-desktop
       stlink
       stm32cubemx
-      typst
+      thunderbird
       vim
       xkeyboard_config
       zotero
@@ -75,6 +74,7 @@
       musescore
       qucs-s
       quickemu
+      typst
       winboat
     ]);
 
