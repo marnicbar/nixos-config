@@ -2,6 +2,7 @@
   config,
   pkgs,
   pkgs-unstable,
+  pkgs-winboat,
   ...
 }:
 
@@ -75,6 +76,8 @@
       qucs-s
       quickemu
       typst
+    ])
+    ++ (with pkgs-winboat; [
       winboat
     ]);
 
