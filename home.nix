@@ -31,7 +31,6 @@
       _1password-gui
       anki-bin
       cm_unicode
-      cmake
       distrobox
       drawio
       doxygen
@@ -44,11 +43,11 @@
       hunspellDicts.en_US
       inkscape
       kdePackages.okular
-      kitty
       libreoffice-qt
       magic-wormhole
       mono
       mpv # for audio playback in Anki
+      musescore
       nixd
       nixfmt-rfc-style
       nvd
@@ -72,9 +71,7 @@
     ])
     ++ (with pkgs-unstable; [
       vscode
-      musescore
       qucs-s
-      quickemu
       typst
     ])
     ++ (with pkgs-winboat; [
