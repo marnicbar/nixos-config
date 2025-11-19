@@ -123,6 +123,7 @@
             myriad-dreamin.tinymist
             github.copilot
             github.copilot-chat
+            github.vscode-github-actions
             streetsidesoftware.code-spell-checker
             streetsidesoftware.code-spell-checker-german
           ]);
