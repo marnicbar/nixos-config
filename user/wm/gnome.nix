@@ -37,7 +37,7 @@
       "org/gnome/settings-daemon/plugins/power".sleep-inactive-ac-timeout = 1200; # 20 minutes
       "org/gnome/settings-daemon/plugins/power".ambient-enabled = false; # Disable automatic screen brightness
 
-      "org/gnome/evince/default".continuous = true; # Enable continuous scrolling in PDF viewer
+      "org/gnome/papers/default".continuous = true; # Enable continuous scrolling in PDF viewer
 
       # Window management
       "org/gnome/mutter".attach-modal-dialogs = false; # Allow movement of modal dialogs (child windows)
