@@ -2,7 +2,6 @@
   config,
   pkgs,
   pkgs-unstable,
-  pkgs-winboat,
   ...
 }:
 
@@ -72,8 +71,6 @@
       vscode
       qucs-s
       typst
-    ])
-    ++ (with pkgs-winboat; [
       winboat
     ]);
 
