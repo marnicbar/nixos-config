@@ -1,20 +1,17 @@
 { config, pkgs, ... }:
 {
   # Enable the GNOME Desktop Environment.
-  services.xserver = {
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome = {
     enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome = {
-      enable = true;
-      extraGSettingsOverrides =
-        if config.networking.hostName == "fw1325" then
-          ''
-            [org.gnome.mutter]
-            experimental-features=['scale-monitor-framebuffer', 'xwayland-native-scaling']
-          ''
-        else
-          '''';
-    };
+    extraGSettingsOverrides =
+      if config.networking.hostName == "fw1325" then
+        ''
+          [org.gnome.mutter]
+          experimental-features=['scale-monitor-framebuffer', 'xwayland-native-scaling']
+        ''
+      else
+        '''';
   };
 
   # Allow Electron and Chromium applications to run without Xwayland under Wayland.

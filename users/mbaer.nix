@@ -15,9 +15,9 @@
   home-manager = {
     users.mbaer = {
       imports = [ ../home.nix ];
-      programs.git = {
-        userName = "Marius Bär";
-        userEmail = "marius.baer@proton.me";
+      programs.git.settings.user = {
+        name = "Marius Bär";
+        email = "marius.baer@proton.me";
       };
     };
   };

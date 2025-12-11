@@ -1,12 +1,10 @@
 {
-  description = "A very basic flake";
-
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-25.05";
+    nixpkgs.url = "nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "nixpkgs/nixpkgs-unstable";
     nixpkgs-winboat.url = "nixpkgs/ffcdcf99d65c61956d882df249a9be53e5902ea5";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
+    home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     # hyprland = {
     #   url = "github:hyprwm/Hyprland";

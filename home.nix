@@ -36,7 +36,6 @@
       doxygen
       freecad-wayland
       gcc-arm-embedded
-      gcc12
       gnuradio
       hunspell
       hunspellDicts.de_DE
@@ -90,14 +89,14 @@
   programs.git = {
     enable = true;
     package = pkgs.gitFull;
-    extraConfig = {
-      init.defaultBranch = "main";
+    settings.aliases = {
+      aliases = {
+        lg1 = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all";
+        lg2 = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'";
+        lg = "lg1";
+      };
       credential.helper = "libsecret";
-    };
-    aliases = {
-      lg1 = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all";
-      lg2 = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'";
-      lg = "lg1";
+      init.defaultBranch = "main";
     };
   };
 
