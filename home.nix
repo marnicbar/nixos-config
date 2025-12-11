@@ -43,7 +43,6 @@
       hunspellDicts.en_US
       inkscape
       kdePackages.okular
-      libreoffice-qt
       magic-wormhole
       mono
       mpv # for audio playback in Anki
@@ -58,6 +57,7 @@
           communications
         ]
       ))
+      onlyoffice-desktopeditors
       recoll
       rnote
       rustdesk-flutter # Use rustdesk-flutter over rustdesk because the latter uses unfree components and therefore won't be cached by hydra.
