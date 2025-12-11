@@ -16,6 +16,10 @@ or
 
 `sudo nix-collect-garbage --delete-older-than 30d`
 
+## Compare the current system configuration with the previous (NuShell)
+
+`nvd diff ...(ls /nix/var/nix/profiles/system-*-link | last 2 | get name)`
+
 # Configuration for specific applications
 
 ## Octave
