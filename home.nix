@@ -34,6 +34,7 @@
       drawio
       doxygen
       freecad-wayland
+      fsearch
       gcc-arm-embedded
       gnuradio
       hunspell
