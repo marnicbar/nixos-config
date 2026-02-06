@@ -100,6 +100,11 @@
 
   programs.nushell = {
     enable = true;
+    configFile.text = ''
+      def o [path: path = .] {
+          xdg-open $path
+      }
+    '';
   };
 
   programs.vscode = {
