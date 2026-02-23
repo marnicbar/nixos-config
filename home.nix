@@ -66,13 +66,13 @@
       thunderbird
       vim
       xkeyboard_config
-      zotero
     ])
     ++ (with pkgs-unstable; [
       vscode
       qucs-s
       typst
       winboat
+      zotero
     ]);
 
   programs.chromium = {
