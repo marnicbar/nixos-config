@@ -68,7 +68,6 @@
       xkeyboard_config
     ])
     ++ (with pkgs-unstable; [
-      vscode
       qucs-s
       typst
       winboat
@@ -128,7 +127,16 @@
             github.vscode-github-actions
             streetsidesoftware.code-spell-checker
             streetsidesoftware.code-spell-checker-german
-          ]);
+            tomoki1207.pdf
+          ])
+          ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+            {
+              name = "chatgpt";
+              publisher = "openai";
+              version = "0.4.76";
+              sha256 = "sha256-KAB03Z4XicQ/FLyzUOVAThwCaRBWIydutiji7ZmGv04=";
+            }
+          ];
         userSettings = {
           "window.zoomLevel" = 0;
           # Disable automatic updates of extensions
