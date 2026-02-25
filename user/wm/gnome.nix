@@ -47,10 +47,10 @@
       "org/gnome/mutter".dynamic-workspaces = false; # Fixed number of workspaces
       "org/gnome/desktop/wm/preferences".num-workspaces = 4;
       "org/gnome/mutter".workspaces-only-on-primary = false; # Use workspaces on all displays
-      "org/gnome/desktop/wm/keybindings".switch-to-workspace-1 = [ "<Shift><Super>1" ];
-      "org/gnome/desktop/wm/keybindings".switch-to-workspace-2 = [ "<Shift><Super>2" ];
-      "org/gnome/desktop/wm/keybindings".switch-to-workspace-3 = [ "<Shift><Super>3" ];
-      "org/gnome/desktop/wm/keybindings".switch-to-workspace-4 = [ "<Shift><Super>4" ];
+      "org/gnome/desktop/wm/keybindings".switch-to-workspace-1 = [ "<Alt><Super>1" ];
+      "org/gnome/desktop/wm/keybindings".switch-to-workspace-2 = [ "<Alt><Super>2" ];
+      "org/gnome/desktop/wm/keybindings".switch-to-workspace-3 = [ "<Alt><Super>3" ];
+      "org/gnome/desktop/wm/keybindings".switch-to-workspace-4 = [ "<Alt><Super>4" ];
 
       "org/gnome/shell" = {
         favorite-apps = [
