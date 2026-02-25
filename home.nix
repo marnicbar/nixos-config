@@ -60,6 +60,7 @@
       recoll
       rnote
       rustdesk-flutter # Use rustdesk-flutter over rustdesk because the latter uses unfree components and therefore won't be cached by hydra.
+      ripgrep
       signal-desktop
       stlink
       stm32cubemx
