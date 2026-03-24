@@ -66,12 +66,12 @@
       stm32cubemx
       thunderbird
       vim
+      winboat
       xkeyboard_config
     ])
     ++ (with pkgs-unstable; [
       qucs-s
       typst
-      winboat
       zotero
     ]);
 
