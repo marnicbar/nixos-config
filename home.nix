@@ -27,7 +27,6 @@
   # environment.
   home.packages =
     (with pkgs; [
-      _1password-gui
       anki-bin
       cm_unicode
       distrobox

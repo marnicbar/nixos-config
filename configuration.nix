@@ -57,6 +57,10 @@
     enable = true;
   };
 
+  # Enable 1password (which allows synchronization with the browser extension)
+  programs._1password.enable = true;
+  programs._1password-gui.enable = true;
+
   # Enable the onedrive service
   services.onedrive.enable = true;
 
