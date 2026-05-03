@@ -1,0 +1,4 @@
+# Raspberry Pi Debug Probe / Picoprobe CMSIS-DAP
+SUBSYSTEM=="usb", ATTR{idVendor}=="2e8a", ATTR{idProduct}=="000c", \
+    MODE:="0666", \
+    SYMLINK+="raspberrypi_debug_probe_%n"

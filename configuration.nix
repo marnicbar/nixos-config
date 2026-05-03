@@ -106,8 +106,9 @@
   '';
 
   services.udev.packages = [
-    (import ./system/stm/stlink_udev_rules.nix { stdenv = pkgs.stdenv; })
     (import ./system/atmel/atmel_ice_udev_rules.nix { stdenv = pkgs.stdenv; })
+    (import ./system/rpi/raspberrypi_debug_probe_udev_rules.nix { stdenv = pkgs.stdenv; })
+    (import ./system/stm/stlink_udev_rules.nix { stdenv = pkgs.stdenv; })
   ];
 
   # System packages on every host
