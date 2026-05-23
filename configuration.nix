@@ -61,6 +61,8 @@
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
 
+  programs.localsend.enable = true;
+
   # Enable the onedrive service
   services.onedrive.enable = true;
 
