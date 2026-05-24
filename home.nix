@@ -69,6 +69,7 @@
       xkeyboard_config
     ])
     ++ (with pkgs-unstable; [
+      claude-code
       qucs-s
       typst
       winboat
