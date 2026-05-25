@@ -17,7 +17,7 @@
       imports = [ ../home.nix ];
       programs.git.settings.user = {
         name = "Marius Bär";
-        email = "marius.baer@proton.me";
+        email = "me@mariusbaer.de";
       };
     };
   };
