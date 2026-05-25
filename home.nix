@@ -7,6 +7,7 @@
 
 {
   imports = [
+    ./user/ai/ai.nix
     ./user/app/sync/syncthing.nix
     ./user/app/sync/onedrive.nix
     ./user/wm/gnome.nix
