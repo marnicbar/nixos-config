@@ -37,6 +37,7 @@
       fsearch
       gcc-arm-embedded
       gnuradio
+      gradia
       hunspell
       hunspellDicts.de_DE
       hunspellDicts.en_US
@@ -47,7 +48,7 @@
       mpv # for audio playback in Anki
       musescore
       nixd
-      nixfmt-rfc-style
+      nixfmt
       nvd
       obsidian
       (octaveFull.withPackages (
@@ -57,7 +58,7 @@
         ]
       ))
       onlyoffice-desktopeditors
-      protonvpn-gui
+      proton-vpn
       recoll
       rnote
       rustdesk-flutter # Use rustdesk-flutter over rustdesk because the latter uses unfree components and therefore won't be cached by hydra.
