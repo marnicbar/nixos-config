@@ -162,6 +162,18 @@
           "tinymist.formatterMode" = "typstyle";
           "cSpell.language" = "en,de-de";
         };
+        keybindings = [
+          {
+            key = "ctrl+shift+c";
+            command = "workbench.action.terminal.copySelection";
+            when = "terminalFocus";
+          }
+          {
+            key = "ctrl+shift+v";
+            command = "workbench.action.terminal.paste";
+            when = "terminalFocus";
+          }
+        ];
       };
     };
   };
