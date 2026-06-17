@@ -177,4 +177,36 @@
       };
     };
   };
+
+  programs.zed-editor = {
+    enable = true;
+    extensions = [
+      "nix"
+      "zig"
+    ];
+    userSettings = {
+      "buffer_font_features" = {
+        "calt" = false;
+      };
+      "git" = {
+        "inline_blame" = {
+          "enabled" = false;
+        };
+      };
+    };
+    userKeymaps = [
+      {
+        context = "Editor";
+        "unbind" = {
+          "ctrl-;" = "editor::ToggleLineNumbers";
+        };
+      }
+      {
+        context = "Workspace";
+        bindings = {
+          "ctrl-;" = "terminal_panel::ToggleFocus";
+        };
+      }
+    ];
+  };
 }
