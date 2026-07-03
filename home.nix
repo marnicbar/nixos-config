@@ -35,8 +35,6 @@
       doxygen
       freecad-wayland
       fsearch
-      gcc-arm-embedded
-      gnuradio
       gradia
       hunspell
       hunspellDicts.de_DE
@@ -64,15 +62,12 @@
       rustdesk-flutter # Use rustdesk-flutter over rustdesk because the latter uses unfree components and therefore won't be cached by hydra.
       ripgrep
       signal-desktop
-      stlink
-      stm32cubemx
       thunderbird
       vim
       xkeyboard_config
     ])
     ++ (with pkgs-unstable; [
       claude-code
-      qucs-s
       typst
       winboat
       zotero
