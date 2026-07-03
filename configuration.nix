@@ -23,6 +23,7 @@
   boot.plymouth.enable = true;
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.segger-jlink.acceptLicense = true;
 
   networking.networkmanager.enable = true; # Enable networkmanager
   systemd.services.NetworkManager-wait-online.enable = false; # Don't wait for a network connection at boot
@@ -111,6 +112,7 @@
     (import ./system/atmel/atmel_ice_udev_rules.nix { stdenv = pkgs.stdenv; })
     (import ./system/rpi/raspberrypi_debug_probe_udev_rules.nix { stdenv = pkgs.stdenv; })
     (import ./system/stm/stlink_udev_rules.nix { stdenv = pkgs.stdenv; })
+    pkgs.segger-jlink-headless
   ];
 
   # System packages on every host
