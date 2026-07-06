@@ -96,6 +96,11 @@
     };
   };
 
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true; # fast, cached `use flake` support
+  };
+
   programs.nushell = {
     enable = true;
     configFile.text = ''
@@ -186,6 +191,22 @@
       "git" = {
         "inline_blame" = {
           "enabled" = false;
+        };
+      };
+      # Use the clangd from PATH
+      "lsp" = {
+        "clangd" = {
+          "binary" = {
+            "path" = "clangd";
+            # Whitelist cross-compilers clangd may query for system include paths
+            # (needed for arm-none-eabi projects). Harmless for other projects.
+            "arguments" = [ "--query-driver=/nix/store/*/bin/*-none-eabi-gcc" ];
+          };
+        };
+      };
+      "terminal" = {
+        "shell" = {
+          "program" = "nu";
         };
       };
     };
