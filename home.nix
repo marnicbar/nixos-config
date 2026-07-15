@@ -1,5 +1,5 @@
 {
-  config,
+  # config,
   pkgs,
   pkgs-unstable,
   ...
@@ -120,10 +120,7 @@
         enableUpdateCheck = false;
         enableExtensionUpdateCheck = false;
         extensions =
-          (with pkgs.vscode-extensions; [
-            # Stable extensions
-          ])
-          ++ (with pkgs-unstable.vscode-extensions; [
+          (with pkgs-unstable.vscode-extensions; [
             jnoortheen.nix-ide
             ms-vscode-remote.remote-containers
             ms-vscode-remote.remote-ssh
@@ -146,7 +143,7 @@
         userSettings = {
           "window.zoomLevel" = 0;
           # Disable automatic updates of extensions
-          "extensions.autoUpdate" = false;
+          "extensions.autoUpdate" = "off";
           # Enable language server for code completion with nixd
           "nix.enableLanguageServer" = true;
           "nix.serverPath" = "nixd";
