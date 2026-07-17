@@ -123,6 +123,7 @@
           with pkgs-unstable.vscode-extensions;
           [
             jnoortheen.nix-ide
+            mkhl.direnv
             ms-vscode-remote.remote-containers
             ms-vscode-remote.remote-ssh
             myriad-dreamin.tinymist
@@ -154,6 +155,12 @@
           };
           "tinymist.formatterMode" = "typstyle";
           "cSpell.language" = "en,de-de";
+          "terminal.integrated.defaultProfile.linux" = "nushell";
+          "terminal.integrated.profiles.linux" = {
+            nushell = {
+              path = "nu";
+            };
+          };
         };
         keybindings = [
           {
