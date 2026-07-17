@@ -119,8 +119,9 @@
       default = {
         enableUpdateCheck = false;
         enableExtensionUpdateCheck = false;
-        extensions =
-          (with pkgs-unstable.vscode-extensions; [
+        extensions = (
+          with pkgs-unstable.vscode-extensions;
+          [
             jnoortheen.nix-ide
             ms-vscode-remote.remote-containers
             ms-vscode-remote.remote-ssh
@@ -131,15 +132,8 @@
             streetsidesoftware.code-spell-checker
             streetsidesoftware.code-spell-checker-german
             tomoki1207.pdf
-          ])
-          ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-            {
-              name = "chatgpt";
-              publisher = "openai";
-              version = "0.4.76";
-              sha256 = "sha256-KAB03Z4XicQ/FLyzUOVAThwCaRBWIydutiji7ZmGv04=";
-            }
-          ];
+          ]
+        );
         userSettings = {
           "window.zoomLevel" = 0;
           # Disable automatic updates of extensions
@@ -171,6 +165,12 @@
             key = "ctrl+shift+v";
             command = "workbench.action.terminal.paste";
             when = "terminalFocus";
+          }
+          {
+            # [Semicolon] is actually the "ö" key if using Neo QWERTZ
+            key = "ctrl+[Semicolon]";
+            command = "workbench.action.terminal.toggleTerminal";
+            when = "terminal.active";
           }
         ];
       };
