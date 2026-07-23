@@ -199,6 +199,14 @@
           "enabled" = false;
         };
       };
+      "languages" = {
+        "Nix" = {
+          "language_servers" = [
+            "nixd"
+            "!nil"
+          ];
+        };
+      };
       # Use the clangd from PATH
       "lsp" = {
         "clangd" = {
@@ -209,6 +217,9 @@
             "arguments" = [ "--query-driver=/nix/store/*/bin/*-none-eabi-gcc" ];
           };
         };
+      };
+      "edit_predictions" = {
+        "allow_data_collection" = "no";
       };
       "terminal" = {
         "shell" = {
