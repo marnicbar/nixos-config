@@ -26,6 +26,8 @@
         config = {
           allowUnfree = true;
           allowUnfreePredicate = (_: true);
+          # winboat bundles Electron 40, which is now EOL/insecure upstream.
+          permittedInsecurePackages = [ "electron-40.10.5" ];
         };
       };
       specialArgs = {
