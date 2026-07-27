@@ -2,6 +2,7 @@
   # config,
   pkgs,
   pkgs-unstable,
+  inputs,
   ...
 }:
 
@@ -11,7 +12,14 @@
     ./user/app/sync/syncthing.nix
     ./user/app/sync/onedrive.nix
     ./user/wm/gnome.nix
+    # Use the direnv module from PR #9701 (nushell hook fix) instead of the
+    # release-26.05 version, until the fix is backported. See flake input
+    # `home-manager-direnv-fix`.
+    "${inputs.home-manager-direnv-fix}/modules/programs/direnv.nix"
   ];
+
+  # Disable the stable direnv module so the pinned one above replaces it.
+  disabledModules = [ "programs/direnv.nix" ];
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

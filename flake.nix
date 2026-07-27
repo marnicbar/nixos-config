@@ -5,6 +5,13 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    # Pinned to the merge commit of PR #9701 (nushell direnv hook fix), used
+    # only to source a single module file until the fix is backported to
+    # release-26.05. `flake = false` means we consume it as a plain source tree.
+    home-manager-direnv-fix = {
+      url = "github:nix-community/home-manager/32de400b6ac9f43042bca706f4a64f6ad08117e8";
+      flake = false;
+    };
     # hyprland = {
     #   url = "github:hyprwm/Hyprland";
     # };
