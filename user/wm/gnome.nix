@@ -3,6 +3,8 @@
   home.packages = with pkgs.gnomeExtensions; [
     # Automatically switch between power profiles based on power supply and battery status
     auto-power-profile
+    # Tiling window manager layouts with snap assist
+    tiling-shell
   ];
   dconf = {
     enable = true;
@@ -61,8 +63,13 @@
         disable-user-extensions = false;
         enabled-extensions = [
           pkgs.gnomeExtensions.auto-power-profile.extensionUuid
+          pkgs.gnomeExtensions.tiling-shell.extensionUuid
         ];
         disabled-extensions = [ ];
+      };
+      "org/gnome/shell/extensions/tilingshell" = {
+        inner-gaps = lib.hm.gvariant.mkUint32 0; # No gap between tiled windows
+        outer-gaps = lib.hm.gvariant.mkUint32 0; # No gap between windows and screen edges
       };
       "org/gnome/shell/extensions/auto-power-profile" = {
         ac = "performance";
