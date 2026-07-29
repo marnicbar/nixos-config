@@ -64,6 +64,7 @@
         ]
       ))
       onlyoffice-desktopeditors
+      pinta
       proton-vpn
       recoll
       rnote
