@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   # pkgs-unstable,
   ...
@@ -8,6 +9,13 @@
   imports = [
     ./system/wm/gnome.nix
   ];
+
+  # Block `nixos-rebuild switch` when a component cannot be swapped out under a
+  # running system.
+  system.switch.inhibitors = {
+    kernel = "${config.boot.kernelPackages.kernel}";
+    systemd = "${config.systemd.package}";
+  };
 
   # Enable flakes
   nix.settings.experimental-features = [

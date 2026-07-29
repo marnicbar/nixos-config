@@ -17,6 +17,15 @@
   # Allow Electron and Chromium applications to run without Xwayland under Wayland.
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  # `nixos-rebuild switch` restarts changed *user* units, and GNOME Shell's unit
+  # (org.gnome.Shell@.service) hardcodes the gnome-shell store path. Any nixpkgs
+  # bump that rebuilds gnome-shell - even without a version change - therefore
+  # kills the running Wayland session mid-switch, which in turn can abort the
+  # switch before stopped system services (NetworkManager!) are started again.
+  # Refuse to switch in that case; use `nixos-rebuild boot` + reboot instead, or
+  # set NIXOS_NO_CHECK=1 to switch anyway.
+  system.switch.inhibitors.gnome-shell = "${pkgs.gnome-shell}";
+
   # Exclude certain (otherwise preinstalled) packages
   environment.gnome.excludePackages = with pkgs; [
     epiphany # Web Browser
