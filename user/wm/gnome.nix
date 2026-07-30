@@ -70,6 +70,7 @@
       "org/gnome/shell/extensions/tilingshell" = {
         inner-gaps = lib.hm.gvariant.mkUint32 0; # No gap between tiled windows
         outer-gaps = lib.hm.gvariant.mkUint32 0; # No gap between windows and screen edges
+        top-edge-maximize = true; # Maximize windows when dragged to top edge of screen
       };
       "org/gnome/shell/extensions/auto-power-profile" = {
         ac = "performance";
