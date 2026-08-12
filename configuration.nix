@@ -75,6 +75,11 @@
     ];
   };
 
+  programs.ausweisapp = {
+    enable = true;
+    openFirewall = true;
+  };
+
   # Enable 1password (which allows synchronization with the browser extension)
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
