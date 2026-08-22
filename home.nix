@@ -37,6 +37,7 @@
   home.packages =
     (with pkgs; [
       anki-bin
+      btop
       cm_unicode
       distrobox
       drawio
