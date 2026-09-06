@@ -65,6 +65,7 @@
         ]
       ))
       onlyoffice-desktopeditors
+      pdfpc
       pinta
       proton-vpn
       recoll
