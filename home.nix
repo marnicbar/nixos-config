@@ -44,6 +44,7 @@
       doxygen
       freecad-wayland
       fsearch
+      gimp
       gradia
       hunspell
       hunspellDicts.de_DE
@@ -66,7 +67,6 @@
       ))
       onlyoffice-desktopeditors
       pdfpc
-      pinta
       proton-vpn
       recoll
       rnote
