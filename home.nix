@@ -78,7 +78,6 @@
       xkeyboard_config
     ])
     ++ (with pkgs-unstable; [
-      claude-code
       typst
       winboat
       zotero
