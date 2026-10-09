@@ -12,6 +12,10 @@
       url = "github:nix-community/home-manager/32de400b6ac9f43042bca706f4a64f6ad08117e8";
       flake = false;
     };
+    # Community repackaging of Anthropic's official Linux .deb (nixpkgs has no
+    # claude-desktop yet). Bump deliberately via flake.lock.
+    claude-desktop.url = "github:aaddrick/claude-desktop-debian";
+    claude-desktop.inputs.nixpkgs.follows = "nixpkgs-unstable";
     # hyprland = {
     #   url = "github:hyprwm/Hyprland";
     # };

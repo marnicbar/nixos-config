@@ -1,4 +1,4 @@
-{ pkgs-unstable, ... }:
+{ inputs, pkgs, pkgs-unstable, ... }:
 
 {
   imports = [ ./freecad-mcp.nix ];
@@ -12,6 +12,11 @@
     package = pkgs-unstable.claude-code;
     enableMcpIntegration = true;
   };
+
+  # FHS variant so MCP servers launched via npx/uvx/docker work.
+  home.packages = [
+    inputs.claude-desktop.packages.${pkgs.stdenv.hostPlatform.system}.claude-desktop-fhs
+  ];
 
   home.file.".claude/CLAUDE.md".source = ./CLAUDE.md;
 }
