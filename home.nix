@@ -68,6 +68,7 @@
       ))
       onlyoffice-desktopeditors
       pdfpc
+      prismlauncher
       proton-vpn
       recoll
       rnote
