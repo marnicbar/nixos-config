@@ -70,6 +70,11 @@
           ];
           inherit specialArgs;
         };
+        pc-marius = lib.nixosSystem {
+          inherit system;
+          modules = sharedModules ++ [ ./hosts/pc-marius.nix ];
+          inherit specialArgs;
+        };
       };
     };
 }
