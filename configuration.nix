@@ -35,6 +35,11 @@
 
   networking.networkmanager.enable = true; # Enable networkmanager
   systemd.services.NetworkManager-wait-online.enable = false; # Don't wait for a network connection at boot
+  # Only answer ARP on the interface that owns the IP, so replies return on the right link when WiFi and Ethernet share a subnet
+  boot.kernel.sysctl = {
+    "net.ipv4.conf.all.arp_ignore" = 1;
+    "net.ipv4.conf.all.arp_announce" = 2;
+  };
 
   # Set time zone
   time.timeZone = "Europe/Berlin";
