@@ -40,7 +40,7 @@
       btop
       cm_unicode
       distrobox
-      busybox
+      dnsutils
       drawio
       doxygen
       freecad-wayland
