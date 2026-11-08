@@ -16,7 +16,7 @@
   # Intel i5-13600KF (Raptor Lake): load current microcode at boot.
   hardware.cpu.intel.updateMicrocode = true;
 
-  # NVIDIA RTX 2060 (Turing, supported by the open kernel modules)
+  # NVIDIA RTX 3070 (Ampere, supported by the open kernel modules)
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.graphics = {
     enable = true;
