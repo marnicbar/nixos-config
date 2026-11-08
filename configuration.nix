@@ -139,7 +139,7 @@
     (import ./system/atmel/atmel_ice_udev_rules.nix { stdenv = pkgs.stdenv; })
     (import ./system/rpi/raspberrypi_debug_probe_udev_rules.nix { stdenv = pkgs.stdenv; })
     (import ./system/stm/stlink_udev_rules.nix { stdenv = pkgs.stdenv; })
-    pkgs.segger-jlink-headless
+    # pkgs.segger-jlink-headless # TODO: re-enable once the J-Link download works on pc-marius
   ];
 
   # System packages on every host
