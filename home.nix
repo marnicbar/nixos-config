@@ -45,6 +45,7 @@
       doxygen
       freecad-wayland
       fsearch
+      gh
       gimp
       gradia
       hunspell
