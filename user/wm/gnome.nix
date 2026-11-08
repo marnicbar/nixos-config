@@ -78,6 +78,7 @@
         lapmode = true;
         threshold = 20;
       };
+      "org/gnome/gnome-system-monitor".network-in-bits = true;
     };
   };
 }
